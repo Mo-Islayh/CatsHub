@@ -80,7 +80,7 @@ const ModalEditAndAdd: React.FC<ModalProps> = ({
         <View style={styles.modalCon}>
           <ScrollView style={styles.flex}>
             <View style={styles.modalBody}>
-              <Text>Edit Cat</Text>
+              {!currentCat ? <Text>Add Cat</Text> : <Text>Edit Cat</Text>}
               <View style={styles.inputsCon}>
                 <InputField
                   FieldName="name"
@@ -134,7 +134,7 @@ const InputField = ({FieldName, fields, setFields}: InputField) => {
           });
         }}
         value={String(fields[FieldName])}
-        placeholder="useless placeholder"
+        placeholder={`write a cat ${FieldName}`}
       />
     </View>
   );
